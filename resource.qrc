@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/Records">
+        <file>Records/database.db</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>img/login_icon.png</file>
+        <file>img/Buy-48.png</file>
+        <file>img/Sell Stock-64.png</file>
+        <file>img/cash-payment-icon-5.png</file>
+        <file>img/20160528014858.jpg</file>
+        <file>img/dealers_icon.jpg</file>
+        <file>img/diyarbakir-nakliyat.jpg</file>
+        <file>img/fork5.png</file>
+        <file>img/gconstruct1-06.png</file>
+        <file>img/home-content-dealer-icon.png</file>
+        <file>img/icon_suppliers.png</file>
+        <file>img/payment-clipart-k9923905.jpg</file>
+        <file>img/sales-icon-large.png</file>
+        <file>img/supplier_icon.png</file>
+        <file>img/User-icon.png</file>
+        <file>img/back.jpg</file>
+        <file>img/main.png</file>
+    </qresource>
+</RCC>
