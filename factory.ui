@@ -355,7 +355,7 @@ color: rgb(52, 168, 83);w</string>
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1555,7 +1555,11 @@ background-color: rgb(255, 255, 191);</string>
              </layout>
             </item>
             <item>
-             <widget class="QCalendarWidget" name="calendarWidget"/>
+             <widget class="QCalendarWidget" name="calendarWidget">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+             </widget>
             </item>
             <item>
              <spacer name="verticalSpacer_4">

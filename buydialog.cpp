@@ -138,6 +138,14 @@ bool BuyDialog::updateSupplierBalance(QString supplier, qint64 remaining)
     }
 }
 
+bool BuyDialog::areFieldsEmpty()
+{
+    if(ui->weight_spinbox->value() == 0 ||
+            ui->price_spinbox->value() == 0)
+        return true;
+    return false;
+}
+
 BuyDialog::~BuyDialog()
 {
     delete material_model;
@@ -162,6 +170,11 @@ bool BuyDialog::eventFilter(QObject *watched, QEvent *event)
 
 void BuyDialog::on_next_toolbutton_clicked()
 {
+    //check if the fields are empty
+    if(areFieldsEmpty()){
+        qDebug() << "Fields empty";
+            return;
+    }
 
     //add to the total
     qint64 weight = ui->weight_spinbox->value();
@@ -183,6 +196,7 @@ void BuyDialog::on_next_toolbutton_clicked()
     //clear the fields
     ui->price_spinbox->clear();
     ui->weight_spinbox->clear();
+    ui->next_toolbutton->setEnabled(false);
 }
 
 

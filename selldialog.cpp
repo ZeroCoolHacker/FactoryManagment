@@ -7,6 +7,9 @@ SellDialog::SellDialog(QString dealer, QSqlDatabase *database, QSqlQueryModel *d
     QDialog(parent),
     ui(new Ui::SellDialog)
 {
+    Q_ASSERT(dealers_model != Q_NULLPTR);
+    Q_ASSERT(database != Q_NULLPTR);
+
     ui->setupUi(this);
     ui->dateTimeEdit->setDate(QDate::currentDate());
 
@@ -241,9 +244,11 @@ void SellDialog::on_reset_button_clicked()
 void SellDialog::on_deal_button_clicked()
 {
     //check fields
-    if(isAnyFieldEmpty())
+    if(isAnyFieldEmpty()){
         QMessageBox::warning(this,"Empty Fields",
                              "Please Fill in the empty fields");
+        return;
+    }
 
     //confirms from the user
     QMessageBox::StandardButton reply;
@@ -261,7 +266,7 @@ void SellDialog::on_deal_button_clicked()
     }
     //else if he denies the dialog
     else if(reply==QMessageBox::Cancel){
-
+        return;
     }
 }
 

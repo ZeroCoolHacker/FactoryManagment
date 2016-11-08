@@ -23,6 +23,7 @@ public:
     void showDetailString();    //creates the detatiled string of supply items
     bool buySupply();   //implements the buying logic of database
     bool updateSupplierBalance(QString supplier,qint64 remaining);  //adds the remaining amount to the suppliers account
+    bool areFieldsEmpty();
 
     ~BuyDialog();
 

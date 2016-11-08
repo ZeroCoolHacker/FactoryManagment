@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>737</width>
-    <height>438</height>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -348,7 +348,7 @@ color: rgb(146, 189, 108);</string>
                   <string notr="true">color: rgb(186, 96, 0);</string>
                  </property>
                  <property name="minimum">
-                  <number>1</number>
+                  <number>0</number>
                  </property>
                  <property name="maximum">
                   <number>99999999</number>
