@@ -37,8 +37,6 @@ private slots:
     void on_weight_spinbox_valueChanged(int arg1);
     void on_price_spinbox_valueChanged(int arg1);
 
-    void on_totalprice_spinbox_valueChanged(int arg1);
-
 private:
     Ui::BuyDialog *ui;
     QSqlDatabase *db;

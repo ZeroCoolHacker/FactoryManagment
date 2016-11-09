@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>816</width>
-    <height>511</height>
+    <height>542</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -252,7 +252,15 @@ color: rgb(146, 189, 108);</string>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QListView" name="material_view"/>
+          <widget class="QListView" name="material_view">
+           <property name="font">
+            <font>
+             <family>Ubuntu</family>
+             <pointsize>16</pointsize>
+             <italic>true</italic>
+            </font>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QTextEdit" name="detail_text">
@@ -577,7 +585,7 @@ color: rgb(146, 189, 108);</string>
           <string>Recieve Supply</string>
          </property>
          <property name="shortcut">
-          <string>Shift+Return</string>
+          <string>Ctrl+R</string>
          </property>
          <property name="autoDefault">
           <bool>false</bool>

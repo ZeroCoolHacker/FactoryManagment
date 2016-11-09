@@ -301,7 +301,6 @@ void SellDialog::on_cost_spinbox_valueChanged(int arg1)
     qint64 quantity = ui->quantity_spinbox->value();
     qint64 total = arg1 * quantity;
     ui->total_spinbox->setValue(total);
-    ui->cashpaid_spinbox->setValue(total);
 }
 
 void SellDialog::on_quantity_spinbox_valueChanged(int arg1)
@@ -309,7 +308,6 @@ void SellDialog::on_quantity_spinbox_valueChanged(int arg1)
     qint64 cost_per_unit = ui->cost_spinbox->value();
     qint64  total= cost_per_unit * arg1;
     ui->total_spinbox->setValue(total);
-    ui->cashpaid_spinbox->setValue(total);
 
     //check total stock
     int total_stock = ui->totalstock_edit->text().toInt();

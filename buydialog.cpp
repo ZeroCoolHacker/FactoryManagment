@@ -62,7 +62,6 @@ void BuyDialog::displayTotals()
 {
     ui->netweight_spinbox->setValue(net_weight);
     ui->totalprice_spinbox->setValue(total_price);
-    ui->cashpaid_spinbox->setValue(ui->totalprice_spinbox->value());
 }
 
 void BuyDialog::showDetailString()
@@ -259,10 +258,3 @@ void BuyDialog::on_price_spinbox_valueChanged(int arg1)
     ui->calculatedprice_spinbox->setValue(total);
 }
 
-
-
-
-void BuyDialog::on_totalprice_spinbox_valueChanged(int arg1)
-{
-    ui->cashpaid_spinbox->setMaximum(arg1);
-}
