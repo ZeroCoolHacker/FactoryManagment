@@ -194,9 +194,7 @@ bool SellDialog::isAnyFieldEmpty()
             ui->material_combo->currentText().isEmpty() ||
             ui->total_spinbox->value()<1 ||
             ui->total_spinbox->text().isEmpty() ||
-            ui->cashpaid_spinbox->value()<1 ||
             ui->cashpaid_spinbox->text().isEmpty() ||
-            ui->cost_spinbox->value()<1 ||
             ui->cost_spinbox->text().isEmpty() ||
             ui->quantity_spinbox->value()<1 ||
             ui->quantity_spinbox->text().isEmpty())
