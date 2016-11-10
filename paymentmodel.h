@@ -15,7 +15,7 @@ class PaymentModel : public QSqlQueryModel
 public:
     PaymentModel(QObject *parent=nullptr,int namecolumn=0,
                  int moneycolumn=1,int datecolumn=2,
-                 int naturecolumn=3);
+                 int timecolumn=3,int naturecolumn=4);
 
 
 protected:
@@ -26,6 +26,7 @@ private:
     int _moneycolumn;
     int _datecolumn;
     int _naturecolumn;
+    int _timecolumn;
 };
 
 #endif // PAYMENTMODEL_H

@@ -39,12 +39,13 @@ bool PaymentDialog::recievePayment()
     else
         nature = "Paid";
     QSqlQuery q(*db);
-    q.prepare("insert into payments(dealer,money,date,nature)"
-              " values(?,?,?,?)");
+    q.prepare("insert into payments(dealer,money,date,time,nature)"
+              " values(?,?,?,?,?)");
     q.bindValue(0,dealer);
     q.bindValue(1,money);
     q.bindValue(2,date);
-    q.bindValue(3,nature);
+    q.bindValue(3,QTime::currentTime().toString("hh:mm:AP"));
+    q.bindValue(4,nature);
 
     //execute
     if(!(q.exec())){
@@ -72,12 +73,13 @@ bool PaymentDialog::givePayment()
     qDebug()<<dealer;
     //prepare query
     QSqlQuery q(*db);
-    q.prepare("insert into payments(dealer,money,date,nature)"
-              " values(?,?,?,?)");
+    q.prepare("insert into payments(dealer,money,date,time,nature)"
+              " values(?,?,?,?,?)");
     q.bindValue(0,dealer);
     q.bindValue(1,money);
     q.bindValue(2,date);
-    q.bindValue(3,nature);
+        q.bindValue(3,QTime::currentTime().toString("hh:mm:AP"));
+    q.bindValue(4,nature);
 
     //execute
     if(!(q.exec())){
