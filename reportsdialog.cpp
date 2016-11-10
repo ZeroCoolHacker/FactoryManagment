@@ -48,13 +48,11 @@ ReportsDialog::ReportsDialog(QSqlDatabase *database, QWidget *parent) :
 void ReportsDialog::initializeDateEdits()
 {
     //dealer tab
-    QDate lastweek = QDate::currentDate();
-    lastweek.addDays(-7);
-    ui->dealerfrom_dateEdit->setDate(lastweek);
+    ui->dealerfrom_dateEdit->setDate(QDate::currentDate().addDays(-7));
     ui->dealerto_dateEdit->setDate(QDate::currentDate());
 
     //supplier tab
-    ui->supplierfrom_dateEdit_2->setDate(lastweek);
+    ui->supplierfrom_dateEdit_2->setDate(QDate::currentDate().addDays(-7));
     ui->supplierto_dateEdit_2->setDate(QDate::currentDate());
 
 }
@@ -182,7 +180,7 @@ void ReportsDialog::dealerUglyPrint(QPrinter *printer) {
         return;
     }
     TablePrinter uglyTablePrinter(&uglyPainter, printer);
-    QVector<int> colStretch = QVector<int>() << 5 << 5 << 5 << 10 << 15;
+    QVector<int> colStretch = QVector<int>() << 5 << 10 << 10 << 10 << 10;
     uglyTablePrinter.setPen(QPen(QColor(0, 0, 0), 3, Qt::SolidLine)); // pen for borders
     uglyTablePrinter.setHeaderColor(QColor(Qt::black));
     uglyTablePrinter.setContentColor(Qt::black);
@@ -219,7 +217,7 @@ void ReportsDialog::supplierUglyPrint(QPrinter *printer)
         return;
     }
     TablePrinter uglyTablePrinter(&uglyPainter, printer);
-    QVector<int> colStretch = QVector<int>() << 5 << 5 << 5 << 10 << 15;
+    QVector<int> colStretch = QVector<int>() << 5 << 10 << 10 << 10 << 10;
     uglyTablePrinter.setPen(QPen(QColor(0, 0, 0), 3, Qt::SolidLine)); // pen for borders
     uglyTablePrinter.setHeaderColor(QColor(Qt::black));
     uglyTablePrinter.setContentColor(Qt::black);

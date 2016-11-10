@@ -38,7 +38,6 @@ public slots:
 
 private slots:
     void on_printDealerPayment_toolButton_clicked();
-
     void on_printsupplierpayments_toolbutton_clicked();
 
 private:
