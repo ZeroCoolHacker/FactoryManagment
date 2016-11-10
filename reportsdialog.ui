@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>437</width>
-    <height>339</height>
+    <width>455</width>
+    <height>425</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -29,10 +29,21 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QComboBox" name="dealer_comboBox"/>
+            <widget class="QComboBox" name="dealer_comboBox">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(64, 66, 68);
+color: rgb(146, 189, 108);
+font: 14pt &quot;Sans Serif&quot;;</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QDateEdit" name="dealerfrom_dateEdit">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(64, 66, 68);
+color: rgb(146, 189, 108);
+font: 14pt &quot;Sans Serif&quot;;</string>
+             </property>
              <property name="displayFormat">
               <string>dd-MM-yyyy</string>
              </property>
@@ -40,6 +51,11 @@
            </item>
            <item>
             <widget class="QDateEdit" name="dealerto_dateEdit">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(64, 66, 68);
+color: rgb(146, 189, 108);
+font: 14pt &quot;Sans Serif&quot;;</string>
+             </property>
              <property name="displayFormat">
               <string>dd-MM-yyyy</string>
              </property>
@@ -84,10 +100,21 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QComboBox" name="supplier_comboBox_2"/>
+            <widget class="QComboBox" name="supplier_comboBox_2">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(64, 66, 68);
+color: rgb(146, 189, 108);
+font: 14pt &quot;Sans Serif&quot;;</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QDateEdit" name="supplierfrom_dateEdit_2">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(64, 66, 68);
+color: rgb(146, 189, 108);
+font: 14pt &quot;Sans Serif&quot;;</string>
+             </property>
              <property name="displayFormat">
               <string>dd-MM-yyyy</string>
              </property>
@@ -95,6 +122,11 @@
            </item>
            <item>
             <widget class="QDateEdit" name="supplierto_dateEdit_2">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(64, 66, 68);
+color: rgb(146, 189, 108);
+font: 14pt &quot;Sans Serif&quot;;</string>
+             </property>
              <property name="displayFormat">
               <string>dd-MM-yyyy</string>
              </property>
