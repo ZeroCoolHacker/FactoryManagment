@@ -6,10 +6,11 @@ Application::Application(int& argc, char** argv) :
     m_dontShowMainWindow = true;
     // Set organisation and application names
     setApplicationName("786Plastics");
-    setApplicationVersion("2.01");
+    setApplicationVersion("3.00");
     setOrganizationName("Shaprianz");
     setApplicationDisplayName("786Plastics");
     setWindowIcon(QIcon(":/images/img/main.png"));
+
 
     // Show login dialog
     login = new LoginDialog();
