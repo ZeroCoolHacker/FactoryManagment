@@ -8,6 +8,7 @@
 #include <QDate>
 #include <QModelIndexList>
 #include <QModelIndex>
+#include "reportsdialog.h"
 
 Factory::Factory(QString user, QSqlDatabase *database, QWidget *parent) :
     username(user),
@@ -702,4 +703,11 @@ void Factory::on_suppliesdatesearch_dateEdit_dateChanged(const QDate &date)
 {
     Q_UNUSED(date);
     setupSuppliesTabModel();
+}
+
+void Factory::on_actionReports_triggered()
+{
+    ReportsDialog *dialog = new ReportsDialog(db,this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->exec();
 }

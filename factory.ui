@@ -355,7 +355,7 @@ color: rgb(52, 168, 83);w</string>
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1611,6 +1611,7 @@ background-color: rgb(255, 255, 191);</string>
     <addaction name="action_Buy"/>
     <addaction name="actionRecieve_Payment"/>
     <addaction name="actionAbout"/>
+    <addaction name="actionReports"/>
    </widget>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
@@ -1926,6 +1927,11 @@ background-color: rgb(255, 255, 191);</string>
   <action name="actionAbout">
    <property name="text">
     <string>Contact Support</string>
+   </property>
+  </action>
+  <action name="actionReports">
+   <property name="text">
+    <string>Reports</string>
    </property>
   </action>
  </widget>

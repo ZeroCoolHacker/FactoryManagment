@@ -85,6 +85,8 @@ private slots:
 
     void on_suppliesdatesearch_dateEdit_dateChanged(const QDate &date);
 
+    void on_actionReports_triggered();
+
 private:
     Ui::Factory *ui;
     QString username;

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql charts
+QT       += core gui sql charts printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     stockmodel.cpp \
     salesmodel.cpp \
     paymentmodel.cpp \
-    application.cpp
+    application.cpp \
+    reportsdialog.cpp \
+    tableprinter.cpp
 
 HEADERS  += \
     factory.h \
@@ -36,7 +38,9 @@ HEADERS  += \
     stockmodel.h \
     salesmodel.h \
     paymentmodel.h \
-    application.h
+    application.h \
+    reportsdialog.h \
+    tableprinter.h
 
 FORMS    += \
     factory.ui \
@@ -44,7 +48,8 @@ FORMS    += \
     selldialog.ui \
     buydialog.ui \
     logindialog.ui \
-    settingsdialog.ui
+    settingsdialog.ui \
+    reportsdialog.ui
 
 RESOURCES += \
     resource.qrc
