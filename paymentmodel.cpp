@@ -3,7 +3,7 @@
 #include <QBrush>
 
 PaymentModel::PaymentModel(QObject *parent, int namecolumn,
-                           int moneycolumn, int datecolumn, int naturecolumn) :
+                           int moneycolumn, int datecolumn, int timecolumn, int naturecolumn) :
     QSqlQueryModel(parent),
     _dealercolumn(namecolumn),
     _moneycolumn(moneycolumn),
@@ -34,6 +34,13 @@ QVariant PaymentModel::data(const QModelIndex &index, int role) const
             role==Qt::ForegroundRole){
         QColor text;
         text.setNamedColor("#ea4335");
+        return QVariant::fromValue(QBrush(text));
+    }
+    //time
+    if(index.isValid() && index.column()==_datecolumn &&
+            role==Qt::ForegroundRole){
+        QColor text;
+        text.setNamedColor("#bcbebf");
         return QVariant::fromValue(QBrush(text));
     }
     //nature

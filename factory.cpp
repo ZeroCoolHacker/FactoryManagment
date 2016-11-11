@@ -139,7 +139,7 @@ void Factory::setupSuppliersTabModel()
 void Factory::setupPaymentTabModel()
 {
     QSqlQuery q(*db);
-    q.prepare("select dealer as Name,money,date,nature from payments "
+    q.prepare("select dealer as Name,money,date,time,nature from payments "
               "where date>?");
     q.bindValue(0,ui->paymentdatesearch_dateEdit->date().toString("yyyy-MM-dd"));
 
