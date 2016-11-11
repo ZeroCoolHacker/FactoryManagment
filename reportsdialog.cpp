@@ -42,6 +42,8 @@ ReportsDialog::ReportsDialog(QSqlDatabase *database, QWidget *parent) :
     setupConnections();
     initializeModels();
     setupModels();
+    setupDrawingVariables();
+
 
 }
 
@@ -128,6 +130,13 @@ void ReportsDialog::setupSupplierTabModel()
     loadSupplierPayments();
 }
 
+void ReportsDialog::setupDrawingVariables()
+{
+    colStretch = QVector<int>() << 5 << 10 << 10 << 10 << 10 << 10;
+    headers = QVector<QString>() << "ID" << "Name" << "Money" << "Date"
+                                                  << "Time" << "Nature";
+}
+
 void ReportsDialog::loadDealerPayments()
 {
     QSqlQuery q(*db);
@@ -180,7 +189,6 @@ void ReportsDialog::dealerUglyPrint(QPrinter *printer) {
         return;
     }
     TablePrinter uglyTablePrinter(&uglyPainter, printer);
-    QVector<int> colStretch = QVector<int>() << 5 << 10 << 10 << 10 << 10 << 10;
     uglyTablePrinter.setPen(QPen(QColor(0, 0, 0), 3, Qt::SolidLine)); // pen for borders
     uglyTablePrinter.setHeaderColor(QColor(Qt::black));
     uglyTablePrinter.setContentColor(Qt::black);
@@ -194,8 +202,6 @@ void ReportsDialog::dealerUglyPrint(QPrinter *printer) {
     PrintBorder *printB = new PrintBorder;
     printB->pageNumber = 1;
     uglyTablePrinter.setPagePrepare(printB);
-    QVector<QString> headers = QVector<QString>() << "ID" << "Name" << "Money" << "Date"
-                                                  << "Time" << "Nature";
     uglyPainter.setPen(QPen(Qt::black));
     uglyPainter.drawText(uglyPainter.viewport().width()/2 - 40, 40, "786 Plastics");
     uglyPainter.translate(0, 60); // start print point
@@ -218,7 +224,6 @@ void ReportsDialog::supplierUglyPrint(QPrinter *printer)
         return;
     }
     TablePrinter uglyTablePrinter(&uglyPainter, printer);
-    QVector<int> colStretch = QVector<int>() << 5 << 10 << 10 << 10 << 10 << 10;
     uglyTablePrinter.setPen(QPen(QColor(0, 0, 0), 3, Qt::SolidLine)); // pen for borders
     uglyTablePrinter.setHeaderColor(QColor(Qt::black));
     uglyTablePrinter.setContentColor(Qt::black);
@@ -232,8 +237,6 @@ void ReportsDialog::supplierUglyPrint(QPrinter *printer)
     PrintBorder *printB = new PrintBorder;
     printB->pageNumber = 1;
     uglyTablePrinter.setPagePrepare(printB);
-    QVector<QString> headers = QVector<QString>() << "ID" << "Name" << "Money" << "Date"
-                                                  << "Time" << "Nature";
     uglyPainter.setPen(QPen(Qt::black));
     uglyPainter.drawText(uglyPainter.viewport().width()/2 - 40, 40, "786 Plastics");
     uglyPainter.translate(0, 60); // start print point

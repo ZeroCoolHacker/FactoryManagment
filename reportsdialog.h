@@ -27,6 +27,7 @@ public:
     void setupConnections();
     void setupDealerTabModel();
     void setupSupplierTabModel();
+    void setupDrawingVariables();
 
     ~ReportsDialog();
 
@@ -47,7 +48,9 @@ private:
     QSqlQueryModel *supplier_model;
     QSqlQueryModel *dealer_payments_model;
     QSqlQueryModel *supplier_payments_model;
-
+    //for reports
+    QVector<int> colStretch;
+    QVector<QString> headers;
 };
 
 #endif // REPORTSDIALOG_H
