@@ -140,7 +140,7 @@ void ReportsDialog::setupDrawingVariables()
 void ReportsDialog::loadDealerPayments()
 {
     QSqlQuery q(*db);
-    q.prepare("select * from payments"
+    q.prepare("select serial,dealer,money,date,time,nature from payments"
               " where dealer=? and date>? and date<? and nature=?");
     q.bindValue(0,ui->dealer_comboBox->currentText());
     q.bindValue(1,ui->dealerfrom_dateEdit->date().addDays(-1).toString("yyyy-MM-dd"));
