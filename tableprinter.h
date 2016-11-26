@@ -73,6 +73,7 @@ private:
   QPen pen; // for table borders
   QFont headersFont;
   QFont contentFont;
+  QFont titleFont;
   QColor headerColor;
   QColor contentColor;
   // cell margins

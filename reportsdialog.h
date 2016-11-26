@@ -51,6 +51,7 @@ private:
     //for reports
     QVector<int> colStretch;
     QVector<QString> headers;
+    QString _factoryName;
 };
 
 #endif // REPORTSDIALOG_H

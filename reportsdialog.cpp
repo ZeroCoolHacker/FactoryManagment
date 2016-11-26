@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QSqlError>
 #include <QDateEdit>
+#include <QFont>
 
 // pageborderclass
 class PrintBorder : public PagePrepare
@@ -133,8 +134,9 @@ void ReportsDialog::setupSupplierTabModel()
 void ReportsDialog::setupDrawingVariables()
 {
     colStretch = QVector<int>() << 5 << 10 << 10 << 10 << 10 << 10;
-    headers = QVector<QString>() << "ID" << "Name" << "Money" << "Date"
-                                                  << "Time" << "Nature";
+    headers = QVector<QString>() << "ID" << "پارٹی" << "رقم" << "تاریخ"
+                                                  << "وقت" << "Nature";
+    _factoryName = "786 پلاسٹک";
 }
 
 void ReportsDialog::loadDealerPayments()
@@ -181,7 +183,7 @@ void ReportsDialog::loadSupplierPayments()
 
 void ReportsDialog::dealerUglyPrint(QPrinter *printer) {
 
-    // ---------------- death-to-designers example ------------------
+    // ---------------- death-to-designers ------------------
 
     QPainter uglyPainter;
     if(!uglyPainter.begin(printer)) {
@@ -193,6 +195,7 @@ void ReportsDialog::dealerUglyPrint(QPrinter *printer) {
     uglyTablePrinter.setHeaderColor(QColor(Qt::black));
     uglyTablePrinter.setContentColor(Qt::black);
     QFont font1; // font for headers
+    font1.setPixelSize(16);
     font1.setBold(true);
     font1.setWeight(QFont::DemiBold);
     QFont font2; // font for content
@@ -203,7 +206,12 @@ void ReportsDialog::dealerUglyPrint(QPrinter *printer) {
     printB->pageNumber = 1;
     uglyTablePrinter.setPagePrepare(printB);
     uglyPainter.setPen(QPen(Qt::black));
-    uglyPainter.drawText(uglyPainter.viewport().width()/2 - 40, 40, "786 Plastics");
+    QFont titleFont;
+    titleFont.setFamily("arial");
+    titleFont.setWeight(QFont::Black);
+    titleFont.setPixelSize(26);
+    uglyPainter.setFont(titleFont);
+    uglyPainter.drawText(uglyPainter.viewport().width()/2 - 40, 40, _factoryName);
     uglyPainter.translate(0, 60); // start print point
     uglyTablePrinter.setCellMargin(10, 5, 5, 5);
     uglyTablePrinter.setPageMargin(100, 40, 40, 40);
@@ -216,7 +224,7 @@ void ReportsDialog::dealerUglyPrint(QPrinter *printer) {
 
 void ReportsDialog::supplierUglyPrint(QPrinter *printer)
 {
-    // ---------------- death-to-designers example ------------------
+    // ---------------- death-to-designers ------------------
 
     QPainter uglyPainter;
     if(!uglyPainter.begin(printer)) {
@@ -238,7 +246,7 @@ void ReportsDialog::supplierUglyPrint(QPrinter *printer)
     printB->pageNumber = 1;
     uglyTablePrinter.setPagePrepare(printB);
     uglyPainter.setPen(QPen(Qt::black));
-    uglyPainter.drawText(uglyPainter.viewport().width()/2 - 40, 40, "786 Plastics");
+    uglyPainter.drawText(uglyPainter.viewport().width()/2 - 40, 40, _factoryName);
     uglyPainter.translate(0, 60); // start print point
     uglyTablePrinter.setCellMargin(10, 5, 5, 5);
     uglyTablePrinter.setPageMargin(100, 40, 40, 40);
