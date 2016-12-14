@@ -136,7 +136,7 @@ void ReportsDialog::setupDrawingVariables()
     colStretch = QVector<int>() << 5 << 10 << 10 << 10 << 10 << 10;
     headers = QVector<QString>() << "ID" << "پارٹی" << "رقم" << "تاریخ"
                                                   << "وقت" << "Nature";
-    _factoryName = "786 پلاسٹک";
+    _factoryName = "786 پلاسٹکس";
 }
 
 void ReportsDialog::loadDealerPayments()
